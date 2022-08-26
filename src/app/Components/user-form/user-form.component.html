@@ -1,0 +1,21 @@
+<p>user-form works!</p>
+
+<h1></h1>
+
+<Span>{{title}}</Span>
+<div class="row">
+    <div class="col">
+      <input type="text" class="form-control" [(ngModel)] = userDetails.firstname placeholder="First name" aria-label="First name">
+    </div>
+    <div class="col">
+      <input type="text" class="form-control" [(ngModel)] = userDetails.lastname placeholder="Last name" aria-label="Last name">
+    </div>
+    <div class="col">
+        <input type="number" class="form-control" [(ngModel)] = userDetails.age placeholder="Age" aria-label="Age">
+      </div>
+  </div>
+
+
+<br>
+<br>
+<button type="button" class="btn btn-outline-success" (click)="save()">Success</button>
