@@ -1,0 +1,31 @@
+{
+  "users": [
+    {
+      "firstname": "Anny",
+      "lastname": "Gudiya",
+      "age": 5,
+      "id": 1
+    },
+    {
+      "firstname": "sab",
+      "lastname": "shi",
+      "age": 25,
+      "Gender": "Female",
+      "id": 2
+    },
+    {
+      "firstname": "arjun",
+      "lastname": "singh",
+      "age": 20,
+      "Gender": "Male",
+      "id": 3
+    },
+    {
+      "firstname": "Mark",
+      "lastname": "Smith",
+      "age": 30,
+      "Gender": "Male",
+      "id": 4
+    }
+  ]
+}

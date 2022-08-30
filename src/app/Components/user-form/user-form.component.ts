@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { TitleStrategy } from '@angular/router';
+import User from 'src/app/entity/User';
+import { UserService } from 'src/app/user.service';
 
 @Component({
   selector: 'app-user-form',
@@ -7,25 +10,34 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserFormComponent implements OnInit {
 
-  // Firstname = "";
-  // Lastname = "";
-  // age = 0;
-
   title = "Fill all the fields below "
-  userDetails = {
-    firstname:"",
-    lastname:"",
-    age:0
-  }
+  user: User = new User();
+
+  Users: User[] = [];
 
   save() {
-    console.log(this.userDetails.firstname + " " +this.userDetails.lastname);
-    console.log("The age of this user is " +this.userDetails.age);
+
+    const observable = this.userService.createUser(this.user);
+    observable.subscribe(
+      (response: any) => {
+        console.log(response);
+      },
+      function(error){
+        console.log(error);
+        alert("Something went wrong, Please try again!");
+      }   
+   )
+   
   }
 
-  constructor() { }
+  constructor(public userService: UserService) { }
 
   ngOnInit(): void {
+    const promise = this.userService.getUsers();
+    promise.subscribe((response) => {  
+    console.log(response);
+      this.Users = response as User[];
+    })
   }
 
 }
